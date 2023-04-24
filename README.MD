@@ -20,11 +20,32 @@ python tools/patch_model.py --base_model <path_or_name_to_original_model>
 
 **补丁** 安装为原地安装，即安装后的 `patch` 即为完整版 `hf` 格式的权重，您可以使用 `transformers` 加载模型。
 
+## 通过命令行快速体验
+
+经过 **patch** 的模型被 `transformers` 轻松加载。为了方便快速体验效果，我们提供了控制台的 Demo：
+
+```bash
+
+python cli_demo.py --model openlmlab/open-chinese-llama-7b-patch
+                   --devices 0
+                   --max_length 1024
+                   --do_sample true
+                   --top_k 40
+                   --top_p 0.8
+                   --temperature 0.7
+                   --penalty 1.02
+
+```
+
+效果如图所示：
+
+![Cli Demo](/pics/cli_demo.png "命令行 Demo")
+
 ## 下载地址
 
 | 来源      | 地址 |
 | ----------- | ----------- |
 | 🤗Huggingface   | [openlmlab/open-chinese-llama-7b-patch](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch)       |
-| 百度网盘       | Text        |
-| Google Driver | Text        |
+| 百度网盘       | -        |
+| Google Driver | -        |
 

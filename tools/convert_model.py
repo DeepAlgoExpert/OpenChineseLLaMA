@@ -1,6 +1,3 @@
-import sys
-sys.path.append("/mnt/lustre/zhangshuo/projects/collie/")
-
 import argparse
 
 from collie.models.llama_colossalai import load_state_dict, ModelArgs, save_state_dict

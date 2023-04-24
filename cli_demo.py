@@ -1,7 +1,4 @@
 import os
-import sys
-sys.path.append("/mnt/lustre/zhangshuo/projects/collie/")
-
 import json
 import torch
 import argparse
@@ -12,7 +9,7 @@ from accelerate import init_empty_weights, load_checkpoint_and_dispatch
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, default="openlmlab/further-trained-llama-7b-patch", help="Path or name to the model. (e.g. `openlmlab/further-trained-llama-7b-patch`)")
 parser.add_argument("--devices", type=str, default="0,1", help="Devices to use. (e.g. `0,1`)")
-parser.add_argument("--max_length", type=int, default=20478, help="Max length to generate. (e.g. 2048)")
+parser.add_argument("--max_length", type=int, default=100, help="Max length to generate. (e.g. 2048)")
 parser.add_argument("--do_sample", type=bool, default=True, help="Whether to enable sampling in generation. (e.g. True)")
 parser.add_argument("--top_k", type=int, default=40, help="top_k in generation. (e.g. 40)")
 parser.add_argument("--top_p", type=float, default=0.8, help="top_p in generation. (e.g. 0.8)")
@@ -47,24 +44,25 @@ def cli(model: str = args.model,
     print("请输入提示, 输入 exit 退出")
     while True:
         prompt = input("Prompt: ")
+        if prompt.strip() == "exit":
+            break
         inputs = tokenizer(prompt, return_tensors="pt")
+        inputs.input_ids[:, 0] = 1
         with torch.no_grad():
-            print(inputs.input_ids)
-            generate_ids = model.generate(inputs.input_ids.cuda(), max_length=30)
-            
-            # outputs = model.generate(
-            #     inputs.input_ids.cuda(), 
-            #     attention_mask=inputs.attention_mask.cuda(), 
-            #     max_length=max_length, 
-            #     do_sample=do_sample, 
-            #     top_k=top_k, 
-            #     top_p=top_p, 
-            #     temperature=temperature,
-            #     repetition_penalty=penalty,
-            #     num_return_sequences=1,
-            #     eos_token_id=tokenizer.sp_model.eos_id())
-            # response = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
-            print(tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0])
+            outputs = model.generate(
+                inputs.input_ids.cuda(), 
+                attention_mask=inputs.attention_mask.cuda(), 
+                max_length=max_length, 
+                do_sample=do_sample, 
+                top_k=top_k, 
+                top_p=top_p, 
+                temperature=temperature,
+                repetition_penalty=penalty,
+                num_return_sequences=1,
+                eos_token_id=tokenizer.sp_model.eos_id(),
+                bos_token_id=tokenizer.sp_model.bos_id())
+            response = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
+            print(prompt + response)
     
 if __name__ == "__main__":
     cli()
