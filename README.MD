@@ -18,7 +18,7 @@ pip install git+https://github.com/OpenLMLab/collie.git
 | ----------- | ----------- |
 | 🤗Huggingface   | [openlmlab/open-chinese-llama-7b-patch](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch)       |
 | 百度网盘         | [提取码 `gk34`](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34) |
-| Google Driver   | -        |
+| Google Driver   | [further-train-7B](https://drive.google.com/drive/folders/1THvuFzq_wojVfMLYV1qsSE_ddSjG0Ypv?usp=sharing)        |
 | SHA256 校验文件  | [SHA256.txt](./SHA256.txt) |
 
 ## 评测
