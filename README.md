@@ -1,62 +1,51 @@
-# LLaMA 
+[**中文**](./README.md) | [**English**](./README_EN.md)
 
-This repository is intended as a minimal, hackable and readable example to load [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) ([arXiv](https://arxiv.org/abs/2302.13971v1)) models and run inference.
-In order to download the checkpoints and tokenizer, fill this [google form](https://forms.gle/jk851eBVbX1m5TAv5)
+# Open-Chinese-LLaMA-7B-Patch
 
-## Setup
+本项目为基于 [LLaMA](https://github.com/facebookresearch/llama)-7B 经过 **中文数据集二次预训练** 产生的 **中文大语言模型基座**。
 
-In a conda env with pytorch / cuda available, run:
-```
-pip install -r requirements.txt
-```
-Then in this repository:
-```
-pip install -e .
-```
+## 使用
 
-## Download
+由于 [LLaMA](https://github.com/facebookresearch/llama)-7B 未开源官方权重，本次发布的模型为 **补丁** 类型，需配合原始官方权重才可以使用。
 
-Once your request is approved, you will receive links to download the tokenizer and model files.
-Edit the `download.sh` script with the signed url provided in the email to download the model weights and tokenizer.
+您可以通过 `tools/patch_model.py` 来安装 **补丁**，例如：
 
-## Inference
+```bash
 
-The provided `example.py` can be run on a single or multi-gpu node with `torchrun` and will output completions for two pre-defined prompts. Using `TARGET_FOLDER` as defined in `download.sh`:
-```
-torchrun --nproc_per_node MP example.py --ckpt_dir $TARGET_FOLDER/model_size --tokenizer_path $TARGET_FOLDER/tokenizer.model
-```
-
-Different models require different MP values:
-
-|  Model | MP |
-|--------|----|
-| 7B     | 1  |
-| 13B    | 2  |
-| 33B    | 4  |
-| 65B    | 8  |
-
-## FAQ
-
-- [1. The download.sh script doesn't work on default bash in MacOS X](FAQ.md#1)
-- [2. Generations are bad!](FAQ.md#2)
-- [3. CUDA Out of memory errors](FAQ.md#3)
-- [4. Other languages](FAQ.md#4)
-
-## Reference
-
-LLaMA: Open and Efficient Foundation Language Models -- https://arxiv.org/abs/2302.13971
+python tools/patch_model.py --base_model <path_or_name_to_original_model>
+                            --patch_model openlmlab/open-chinese-llama-7b-patch
+                            --base_model_format <hf_or_raw>
 
 ```
-@article{touvron2023llama,
-  title={LLaMA: Open and Efficient Foundation Language Models},
-  author={Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and Martinet, Xavier and Lachaux, Marie-Anne and Lacroix, Timoth{\'e}e and Rozi{\`e}re, Baptiste and Goyal, Naman and Hambro, Eric and Azhar, Faisal and Rodriguez, Aurelien and Joulin, Armand and Grave, Edouard and Lample, Guillaume},
-  journal={arXiv preprint arXiv:2302.13971},
-  year={2023}
-}
+
+**补丁** 安装为原地安装，即安装后的 `patch` 即为完整版 `hf` 格式的权重，您可以使用 `transformers` 加载模型。
+
+## 通过命令行快速体验
+
+经过 **patch** 的模型被 `transformers` 轻松加载。为了方便快速体验效果，我们提供了控制台的 Demo：
+
+```bash
+
+python cli_demo.py --model openlmlab/open-chinese-llama-7b-patch
+                   --devices 0
+                   --max_length 1024
+                   --do_sample true
+                   --top_k 40
+                   --top_p 0.8
+                   --temperature 0.7
+                   --penalty 1.02
+
 ```
 
-## Model Card
-See [MODEL_CARD.md](MODEL_CARD.md)
+效果如图所示：
 
-## License
-See the [LICENSE](LICENSE) file.
+![Cli Demo](/pics/cli_demo.png "命令行 Demo")
+
+## 下载地址
+
+| 来源      | 地址 |
+| ----------- | ----------- |
+| 🤗Huggingface   | [openlmlab/open-chinese-llama-7b-patch](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch)       |
+| 百度网盘       | -        |
+| Google Driver | -        |
+
