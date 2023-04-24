@@ -11,6 +11,7 @@ parser.add_argument("--target_format", type=str, default="raw", help="Format of 
 parser.add_argument("--target_path", type=str, default="./converted_model", help="Path to save the converted model. (e.g. `./converted_model`)")
 parser.add_argument("--raw_parallel_degree", type=int, default=2, help="Parallel degree of the raw format model. (e.g. 1)")
 parser.add_argument("--raw_parallel_devices", type=str, default='0,1', help="Parallel devices of the raw format model. (e.g. `0,1`)")
+parser.add_argument("--raw_multiple_of", type=int, default=256, help="raw_multiple_of for raw format model. (default: 256)")
 args = parser.parse_known_args()[0]
 
 def convert_model(model_path: str = args.model_path,
@@ -18,7 +19,8 @@ def convert_model(model_path: str = args.model_path,
                   target_format: str = args.target_format,
                   target_path: str = args.target_path,
                   raw_parallel_degree: int = args.raw_parallel_degree,
-                  raw_parallel_devices: str = args.raw_parallel_devices):
+                  raw_parallel_devices: str = args.raw_parallel_devices,
+                  raw_multiple_of: int = args.raw_multiple_of):
     assert args.source_format in ["hf", "raw"], "source_format must be either hf or raw"
     assert args.target_format in ["hf", "raw"], "target_format must be either hf or raw"
     assert args.source_format != args.target_format, "source_format and target_format must be different"
@@ -41,7 +43,8 @@ def convert_model(model_path: str = args.model_path,
         save_to_buffer=False,
         model_args=model_args,
         raw_tp_size=raw_parallel_degree,
-        raw_tp_device_map=raw_tp_device_map
+        raw_tp_device_map=raw_tp_device_map,
+        raw_multiple_of=raw_multiple_of
     )
     
 if __name__ == "__main__":

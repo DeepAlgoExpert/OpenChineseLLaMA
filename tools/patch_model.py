@@ -11,7 +11,7 @@ from collie.models.llama_colossalai import load_state_dict, save_state_dict, Mod
 parser = argparse.ArgumentParser()
 parser.add_argument("--base_model", type=str, default="decapoda-research/llama-7b-hf", help="Path or name to the base model to patch. (e.g. decapoda-research/llama-7b-hf)")
 parser.add_argument("--base_model_format", type=str, default="hf", help="Format of the base model. (e.g. hf or raw)")
-parser.add_argument("--patch_model", type=str, default="openlmlab/further-trained-llama-7b-patch", help="Path or name to the patch model to patch. (e.g. OpenLMLab/yangtuo)")
+parser.add_argument("--patch_model", type=str, default="openlmlab/open-chinese-llama-7b-patch", help="Path or name to the patch model to patch. (e.g. OpenLMLab/yangtuo)")
 parser.add_argument("--offload", default=False, action="store_true", help="Whether to offload the base model to the disk. Enable this when meeting CPU RAM shortage.")
 parser.add_argument("--offload_path", type=str, default="./offload/", help="Path to offload the base model. (e.g. ./offload/)")
 args = parser.parse_known_args()[0]
