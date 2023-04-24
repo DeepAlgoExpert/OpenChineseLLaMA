@@ -1,4 +1,6 @@
+import os
 import argparse
+from huggingface_hub import snapshot_download
 
 from collie.models.llama_colossalai import load_state_dict, ModelArgs, save_state_dict
 
@@ -20,6 +22,8 @@ def convert_model(model_path: str = args.model_path,
     assert args.source_format in ["hf", "raw"], "source_format must be either hf or raw"
     assert args.target_format in ["hf", "raw"], "target_format must be either hf or raw"
     assert args.source_format != args.target_format, "source_format and target_format must be different"
+    if not os.path.exists(model_path):
+        model_path = snapshot_download(model_path)
     model_args = ModelArgs()
     state_dict = load_state_dict(
         protocol="file",

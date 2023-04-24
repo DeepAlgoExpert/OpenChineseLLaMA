@@ -1,6 +1,3 @@
-import sys
-sys.path.append("/mnt/lustre/zhangshuo/projects/collie/")
-
 import io
 import os
 import json
