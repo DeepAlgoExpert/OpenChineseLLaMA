@@ -4,7 +4,7 @@
 
 本项目为基于 [LLaMA](https://github.com/facebookresearch/llama)-7B 经过 **中文数据集二次预训练** 产生的 **中文大语言模型基座**。
 
-本项目代码依赖于 [OpenNLPLab/collie](https://github.com/OpenLMLab/collie)，请通过如下命令安装：
+本项目代码依赖于 [OpenLMLab/collie](https://github.com/OpenLMLab/collie)，请通过如下命令安装：
 
 ```bash
 
@@ -64,7 +64,7 @@ python cli_demo.py --model openlmlab/open-chinese-llama-7b-patch
 
 ## 模型格式转换
 
-**Open-Chinese-LLaMA-7B-Patch** 中的 `patch_model.py` 工具尽可转换为 `transformers` 可加载的 **hf** 格式。为了方便，我们同时提供了官方版本模型（`raw`）到 `hf` 的转换工具：
+**Open-Chinese-LLaMA-7B-Patch** 中的 `patch_model.py` 工具生成的本模型为 `transformers` 可加载的 **hf** 格式。为了方便，我们同时提供了官方版本模型（`raw`）和 `hf` 的相互转换工具：
 
 提示，当转换成 `raw` 格式的模型时，需要指定张量并行的大小和对应设备，并且只能在拥有对应数量的显卡的机器上转换。
 
