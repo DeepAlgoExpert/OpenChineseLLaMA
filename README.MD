@@ -4,7 +4,7 @@
 
 本项目为基于 [LLaMA](https://github.com/facebookresearch/llama)-7B 经过 **中文数据集二次预训练** 产生的 **中文大语言模型基座**。
 
-本项目代码依赖于 [OpenNLPLab/collie](https://github.com/OpenLMLab/collie)，请通过如下命令安装：
+本项目代码依赖于 [OpenLMLab/collie](https://github.com/OpenLMLab/collie)，请通过如下命令安装：
 
 ```bash
 
