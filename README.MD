@@ -12,6 +12,19 @@ pip install git+https://github.com/OpenLMLab/collie.git
 
 ```
 
+## 下载地址
+
+| 来源      | 地址 |
+| ----------- | ----------- |
+| 🤗Huggingface   | [openlmlab/open-chinese-llama-7b-patch](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch)       |
+| 百度网盘         | [提取码 `gk34`](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34) |
+| Google Driver   | -        |
+| SHA256 校验文件  | [SHA256.txt](./SHA256.txt) |
+
+## 评测
+
+见 [Benchmark.md](./benchmark/Benchmark.md)。
+
 ## 使用
 
 由于 [LLaMA](https://github.com/facebookresearch/llama)-7B 未开源官方权重，本次发布的模型为 **补丁** 类型，需配合原始官方权重才可以使用。
@@ -48,14 +61,6 @@ python cli_demo.py --model openlmlab/open-chinese-llama-7b-patch
 效果如图所示：
 
 ![Cli Demo](/pics/cli_demo.png "命令行 Demo")
-
-## 下载地址
-
-| 来源      | 地址 |
-| ----------- | ----------- |
-| 🤗Huggingface   | [openlmlab/open-chinese-llama-7b-patch](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch)       |
-| 百度网盘       | -        |
-| Google Driver | -        |
 
 ## 模型格式转换
 
