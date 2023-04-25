@@ -8,7 +8,7 @@
 
 ## 特点
 
-* 本项目为通过全量微调（Full-tuning）获得的中文预训练模型，提供 huggingface 版本权重
+* 本项目为通过增强预训练（Further-Pretrain）获得的中文预训练模型，提供 huggingface 版本权重
 * 对比原版 LLaMA，本模型在中文理解能力和生成能力方面均获得较大提升，在众多下游任务中均取得了突出的成绩，详见 [评测](##评测)
 * 本项目提供了 Huggingface 版本权重和 Meta 版本权重的转换工具
 * 支持 [🤗transformers](https://github.com/huggingface/transformers)，提供命令行工具方便测试模型效果
@@ -27,9 +27,9 @@
 
 ### 使用须知
 
-Meta 官方发布的 [LLaMA](https://github.com/facebookresearch/llama) 未开源权重，为了遵守相关许可，本次发布的模型为**补丁（Patch）**类型，须配合原始官方权重才可以使用。
+Meta 官方发布的 [LLaMA](https://github.com/facebookresearch/llama) 未开源权重，为了遵守相关许可，本次发布的模型为 **补丁（Patch）** 类型，须配合原始官方权重才可以使用。
 
-我们提供了**补丁（Patch）**的安装脚本，在通过正规渠道获得官方权重后，可以通过以下方式安装补丁：
+我们提供了 **补丁（Patch）** 的安装脚本，在通过正规渠道获得官方权重后，可以通过以下方式安装补丁：
 
 ```bash
 python tools/patch_model.py --base_model <path_or_name_to_original_model>

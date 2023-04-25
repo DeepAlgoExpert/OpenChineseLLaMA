@@ -8,7 +8,7 @@ This project is a **Chinese large language model base** generated through **incr
 
 ## Features
 
-* This project provides a Chinese pre-trained model obtained through full-tuning, including Huggingface version weights.
+* This project provides a Chinese pre-trained model obtained through Further-Pretrain, including Huggingface version weights.
 * Compared to the original LLaMA, this model has significantly improved Chinese understanding and generation capabilities, achieving outstanding results in various downstream tasks. See [Evaluation](##Evaluation) for details.
 * This project provides tools for converting Huggingface version weights and Meta version weights.
 * Supports [🤗transformers](https://github.com/huggingface/transformers), and provides command-line tools for easy model testing.
