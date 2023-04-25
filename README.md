@@ -27,9 +27,9 @@
 
 ### 使用须知
 
-Meta 官方发布的 [LLaMA](https://github.com/facebookresearch/llama) 未开源权重，为了遵守相关许可，本次发布的模型为**补丁（Patch）**类型，须配合原始官方权重才可以使用。
+Meta 官方发布的 [LLaMA](https://github.com/facebookresearch/llama) 未开源权重，为了遵守相关许可，本次发布的模型为 **补丁（Patch）** 类型，须配合原始官方权重才可以使用。
 
-我们提供了**补丁（Patch）**的安装脚本，在通过正规渠道获得官方权重后，可以通过以下方式安装补丁：
+我们提供了 **补丁（Patch）** 的安装脚本，在通过正规渠道获得官方权重后，可以通过以下方式安装补丁：
 
 ```bash
 python tools/patch_model.py --base_model <path_or_name_to_original_model>
