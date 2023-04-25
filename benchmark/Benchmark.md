@@ -34,10 +34,17 @@
 | Flores EN-ZH  | 5.27     | 23.71       |
 | Flores ZH-EN  | 6.69     | 13.85       |
 | PIQA          | 79.8     | 77.31       |
-| HumanEval     | 10.5     | 14.63       |
-| MBPP          | 17.7     | 17.2        |
 | GSM8K         | 11.0     | 10.91       |
 | CommensenseQA | 67.40    | 66.91       |
+
+
+
+### 代码数据集
+
+| 数据集    | LLAMA 7B | finetune 7B |
+| --------- | -------- | ----------- |
+| HumanEval | 10.5     | 14.63       |
+| MBPP      | 17.7     | 17.2        |
 
 
 
@@ -102,4 +109,5 @@
 | human aging                         | 40.8     | 54.54       |
 | us foreign policy                   | 46.0     | 38.88       |
 | conceptual physics                  | 36.6     | 22.22       |
+| average                             | 35.64    | 34.92       |
 
