@@ -3,6 +3,7 @@ import os
 import json
 import tqdm
 import torch
+import shutil
 import argparse
 from huggingface_hub import snapshot_download
 
@@ -68,6 +69,8 @@ def patch_model(base_model: str = args.base_model,
                 file.write(json.dumps(patch_history, indent=4))
             pbar.update(1)
     finish()
+    if offload:
+        shutil.rmtree(offload_path)
     
 def finish():
     print("Congratulations! You have successfully installed the model patch.")
