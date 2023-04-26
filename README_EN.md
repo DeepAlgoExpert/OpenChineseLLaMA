@@ -23,7 +23,7 @@ This project is a **Chinese large language model base** generated through **incr
 
 | Model Name                    | Weight Type | Download Link                                                     | SHA256                 |
 | --------------------------- | -------- | ------------------------------------------------------------ | ---------------------- |
-| Open-Chinese-LLaMA-7B-Patch | Patch    | [[🤗Huggingface]]() <br> [[Baidu Cloud]](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34)<br>[[Google Driver]](https://drive.google.com/drive/folders/1THvuFzq_wojVfMLYV1qsSE_ddSjG0Ypv?usp=sharing) | [SHA256](./SHA256.txt) |
+| Open-Chinese-LLaMA-7B-Patch | Patch    | [[🤗Huggingface]](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch) <br> [[Baidu Cloud]](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34)<br>[[Google Driver]](https://drive.google.com/drive/folders/1THvuFzq_wojVfMLYV1qsSE_ddSjG0Ypv?usp=sharing) | [SHA256](./SHA256.txt) |
 
 ### Usage Notes
 
