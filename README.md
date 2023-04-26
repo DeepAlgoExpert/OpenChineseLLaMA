@@ -23,7 +23,7 @@
 
 | 模型名称                    | 权重类型 | 下载地址                                                     | SHA256                 |
 | --------------------------- | -------- | ------------------------------------------------------------ | ---------------------- |
-| Open-Chinese-LLaMA-7B-Patch | Patch    | [[🤗Huggingface]]() <br> [[百度网盘]](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34)<br>[[Google Driver]](https://drive.google.com/drive/folders/1THvuFzq_wojVfMLYV1qsSE_ddSjG0Ypv?usp=sharing) | [SHA256](./SHA256.txt) |
+| Open-Chinese-LLaMA-7B-Patch | Patch    | [[🤗Huggingface]](https://huggingface.co/openlmlab/open-chinese-llama-7b-patch) <br> [[百度网盘]](https://pan.baidu.com/s/14E7iZKcH-5SHMDu97k70cg?pwd=gk34)<br>[[Google Driver]](https://drive.google.com/drive/folders/1THvuFzq_wojVfMLYV1qsSE_ddSjG0Ypv?usp=sharing) | [SHA256](./SHA256.txt) |
 
 ### 使用须知
 
