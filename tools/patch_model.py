@@ -30,6 +30,7 @@ def patch_model(base_model: str = args.base_model,
     base_state_dict = load_state_dict(protocol="file",
                                       format=base_model_format,
                                       file_folder=base_model,
+                                      offload = None if not offload else offload_path,
                                       model_args=model_args)
     buffers = save_state_dict(base_state_dict, 
                               protocol="file",
