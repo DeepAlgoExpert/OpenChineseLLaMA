@@ -39,12 +39,6 @@ python tools/patch_model.py --base_model <path_or_name_to_original_model>
 
 提示：本补丁的安装方式为原地安装，即安装后的补丁即为完整版 huggingface 版本的本模型权重，您可以使用 transformers加载模型。
 
-提示：该脚本依赖于 [OpenLMLab/collie](https://github.com/OpenLMLab/collie)，请通过下面的命令安装该框架：
-
-```bash
-pip install git+https://github.com/OpenLMLab/collie.git
-```
-
 ## 本地 Demo
 
 为了方便快速测试模型效果，我们提供了命令行版本的 Demo，在您根据 [使用须知](###使用须知) 成功安装补丁之后，可以使用脚本启动交互式界面：

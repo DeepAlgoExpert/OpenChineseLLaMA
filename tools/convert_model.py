@@ -2,7 +2,7 @@ import os
 import argparse
 from huggingface_hub import snapshot_download
 
-from collie.models.llama_colossalai import load_state_dict, ModelArgs, save_state_dict
+from llama_colossalai import load_state_dict, ModelArgs, save_state_dict
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_path", type=str, default="decapoda-research/llama-7b-hf", help="Path or name to the model to convert. (e.g. decapoda-research/llama-7b-hf)")

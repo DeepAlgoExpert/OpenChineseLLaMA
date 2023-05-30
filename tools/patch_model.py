@@ -7,7 +7,7 @@ import shutil
 import argparse
 from huggingface_hub import snapshot_download
 
-from collie.models.llama_colossalai import load_state_dict, save_state_dict, ModelArgs
+from llama_colossalai import load_state_dict, save_state_dict, ModelArgs
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--base_model", type=str, default="decapoda-research/llama-7b-hf", help="Path or name to the base model to patch. (e.g. decapoda-research/llama-7b-hf)")
